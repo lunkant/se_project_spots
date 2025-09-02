@@ -41,7 +41,7 @@
     height: 288px;
   }
   .card__content {
-    gap: 12px;
+    padding-top: 12px;
   }
   .card__title {
     font-size: 16px;
@@ -49,5 +49,7 @@
   .card__like-button {
     width: 20px;
     height: 18px;
+    background-size: contain;
+    background-repeat: no-repeat;
   }
 }
