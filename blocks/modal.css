@@ -1,7 +1,7 @@
 .modal {
   opacity: 0;
   visibility: hidden;
-  transition: opacity 2s ease, visibility 0s linear 2s;
+  transition: opacity 0.5s ease, visibility 0s linear 0.5s;
   background-color: #00000080;
   position: fixed;
   top: 0;
@@ -11,12 +11,14 @@
   display: flex;
   justify-content: center;
   align-items: center;
+
+  box-sizing: border-box;
 }
 .modal_is-opened {
   opacity: 1;
   visibility: visible;
 
-  transition: opacity 2s ease, visibility 0s linear 0s;
+  transition: opacity 0.5s ease, visibility 0s linear 0s;
 }
 .modal__container {
   display: flex;
@@ -43,6 +45,9 @@
   border: none;
   cursor: pointer;
 }
+.modal__close-button:hover {
+  opacity: 1;
+}
 .modal__form {
   display: flex;
   flex-direction: column;
@@ -55,8 +60,6 @@
 .modal__title {
   align-self: flex-start;
   margin: 0 0 32px 45px;
-  width: 169px;
-  height: 32px;
   color: #212121;
   font-family: Poppins, Arial, Helvetica, sans-serif;
   font-weight: 500;
@@ -110,6 +113,11 @@
   white-space: nowrap;
   cursor: pointer;
 }
+.modal__submit-button:hover {
+  opacity: 1;
+  background-color: #212121cc;
+}
+
 @media screen and (max-width: 627px) {
   .modal__container {
     margin: 0 10px;

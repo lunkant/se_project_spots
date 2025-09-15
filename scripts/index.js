@@ -24,28 +24,31 @@ const newPostCardImageCaption = newPostModal.querySelector(
 );
 
 //edit profile
-editProfileButton.addEventListener("click", function () {
+
+function openEditProfileModals() {
+  editProfileModal.classList.add("modal_is-opened");
   editProfileNameInput.value = profileNameEl.textContent;
   editProfileDescriptionInput.value = profileDescriptionEl.textContent;
-
-  editProfileModal.classList.add("modal_is-opened");
-});
-
-editProfileCloseButton.addEventListener("click", function () {
+}
+function closeEditProfileModals() {
   editProfileModal.classList.remove("modal_is-opened");
-});
+}
+
+editProfileButton.addEventListener("click", openEditProfileModals);
+
+editProfileCloseButton.addEventListener("click", closeEditProfileModals);
 
 function handleEditProfileSubmit(evt) {
-  console.log("Submittinf");
   evt.preventDefault();
   profileNameEl.textContent = editProfileNameInput.value;
   profileDescriptionEl.textContent = editProfileDescriptionInput.value;
-  editProfileModal.classList.remove("modal_is-opened");
+  closeEditProfileModals();
 }
 
 editProfileForm.addEventListener("submit", handleEditProfileSubmit);
 
 // New Post
+
 newPostButton.addEventListener("click", function () {
   newPostModal.classList.add("modal_is-opened");
 });
