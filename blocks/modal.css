@@ -1,5 +1,7 @@
 .modal {
+  opacity: 0;
   visibility: hidden;
+  transition: opacity 2s ease, visibility 0s linear 2s;
   background-color: #00000080;
   position: fixed;
   top: 0;
@@ -11,7 +13,10 @@
   align-items: center;
 }
 .modal_is-opened {
+  opacity: 1;
   visibility: visible;
+
+  transition: opacity 2s ease, visibility 0s linear 0s;
 }
 .modal__container {
   display: flex;
@@ -36,6 +41,7 @@
   height: 40px;
   opacity: 0.4;
   border: none;
+  cursor: pointer;
 }
 .modal__form {
   display: flex;
@@ -102,6 +108,7 @@
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
+  cursor: pointer;
 }
 @media screen and (max-width: 627px) {
   .modal__container {

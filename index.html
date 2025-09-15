@@ -154,6 +154,7 @@
                 type="text"
                 class="modal__input"
                 placeholder="Type your name"
+                required
               />
             </label>
 
@@ -164,9 +165,16 @@
                 type="text"
                 class="modal__input"
                 placeholder="Describe yourself"
+                required
               />
             </label>
-            <button type="submit" class="modal__submit-button">Save</button>
+            <button
+              type="submit"
+              class="modal__submit-button"
+              id="edit-modal-submit-button"
+            >
+              Save
+            </button>
           </form>
         </div>
       </div>
@@ -179,7 +187,7 @@
           </button>
 
           <h2 class="modal__title">New post</h2>
-          <form class="modal__form">
+          <form class="modal__form" id="new-post-modal-form">
             <label for="card-image-input" class="modal__label">
               Image link
               <input
@@ -187,6 +195,7 @@
                 type="url"
                 class="modal__input"
                 placeholder="Place a link to the picture"
+                required
               />
             </label>
 
@@ -197,6 +206,7 @@
                 type="text"
                 class="modal__input"
                 placeholder="Describe yourself"
+                required
               />
             </label>
             <button type="submit" class="modal__submit-button">Save</button>
