@@ -6,7 +6,7 @@
   border-radius: 8px;
 }
 .card__content {
-  padding-top: 20px;
+  padding-top: 12px;
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
