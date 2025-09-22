@@ -95,7 +95,7 @@
   letter-spacing: 0%;
 }
 .modal__input:hover {
-  color: #212121;
+  border: 1px solid #212121;
   cursor: pointer;
 }
 
