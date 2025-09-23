@@ -56,26 +56,34 @@ const newPostCardImageCaption = newPostModal.querySelector(
   "#card-image-caption"
 );
 
-//edit profile
+// open close profile Modal
 
-function openEditProfileModals() {
+function openModal(modal) {
+  modal.classList.add("modal_is-opened");
+}
+
+function closeModals(modal) {
+  modal.classList.remove("modal_is-opened");
+}
+
+//edit profile
+function openEditProfileModalsandFillInputs() {
   editProfileModal.classList.add("modal_is-opened");
   editProfileNameInput.value = profileNameEl.textContent;
   editProfileDescriptionInput.value = profileDescriptionEl.textContent;
 }
-function closeEditProfileModals() {
-  editProfileModal.classList.remove("modal_is-opened");
-}
 
-editProfileButton.addEventListener("click", openEditProfileModals);
+editProfileButton.addEventListener("click", openEditProfileModalsandFillInputs);
 
-editProfileCloseButton.addEventListener("click", closeEditProfileModals);
+editProfileCloseButton.addEventListener("click", () => {
+  closeModals(editProfileModal);
+});
 
 function handleEditProfileSubmit(evt) {
   evt.preventDefault();
   profileNameEl.textContent = editProfileNameInput.value;
   profileDescriptionEl.textContent = editProfileDescriptionInput.value;
-  closeEditProfileModals();
+  closeModals(editProfileModal);
 }
 
 editProfileForm.addEventListener("submit", handleEditProfileSubmit);
@@ -83,18 +91,18 @@ editProfileForm.addEventListener("submit", handleEditProfileSubmit);
 // New Post
 
 newPostButton.addEventListener("click", function () {
-  newPostModal.classList.add("modal_is-opened");
+  openModal(newPostModal);
 });
 
 newPostCloseButton.addEventListener("click", function () {
-  newPostModal.classList.remove("modal_is-opened");
+  closeModals(newPostModal);
 });
 
 function handleNewPostSubmit(evt) {
   evt.preventDefault();
   console.log(newPostCardImageInput.value);
   console.log(newPostCardImageCaption.value);
-  newPostModal.classList.remove("modal_is-opened");
+  closeModals(newPostModal);
 }
 
 newPostForm.addEventListener("submit", handleNewPostSubmit);
