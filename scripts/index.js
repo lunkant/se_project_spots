@@ -148,15 +148,13 @@ newPostCloseButton.addEventListener("click", function () {
 
 function handleNewPostSubmit(evt) {
   evt.preventDefault();
-  console.log(newPostCardImageInputLink.value);
-  console.log(newPostCardImageCaption.value);
   const inputValues = {
     name: newPostCardImageCaption.value,
     link: newPostCardImageInputLink.value,
   };
   const cardElement = getCardElement(inputValues);
   cardsList.prepend(cardElement);
-
+  newPostForm.reset();
   closeModals(newPostModal);
 }
 
