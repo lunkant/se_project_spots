@@ -106,15 +106,15 @@
     margin: 0;
     padding: 0;
     width: 288px;
-    height: 88px;
   }
   .profile__add-button {
     display: flex;
     align-items: center; /* vertical centering */
     justify-content: center;
-    margin: -53px 0 0;
+    margin: 0;
     width: 288px;
     height: 52px;
+    gap: 8px;
   }
 
   .profile__name {
