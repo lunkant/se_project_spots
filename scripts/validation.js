@@ -50,19 +50,19 @@ const hasInvalidInput = (inputList) => {
 
 const toggleButtonState = (inputList, buttonElement, config) => {
   if (hasInvalidInput(inputList)) {
-    disableButton(buttonElement);
+    disableButton(buttonElement, config);
   } else {
     buttonElement.classList.remove(config.inactiveButtonClass);
     buttonElement.disabled = false;
   }
 };
-const disableButton = (buttonElement) => {
-  buttonElement.classList.add(settings.inactiveButtonClass);
+const disableButton = (buttonElement, config) => {
+  buttonElement.classList.add(config.inactiveButtonClass);
   buttonElement.disabled = true;
 };
-const resetValidation = (formElemtent, inputList) => {
+const resetValidation = (formElemtent, inputList, config) => {
   inputList.forEach((input) => {
-    hideInputError(formElemtent, input);
+    hideInputError(formElemtent, input, config);
   });
 };
 
