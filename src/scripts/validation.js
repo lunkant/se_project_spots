@@ -1,4 +1,4 @@
-const settings = {
+export const settings = {
   formSelector: ".modal__form",
   inputSelector: ".modal__input",
   submitButtonSelector: ".modal__submit-button",
@@ -56,11 +56,11 @@ const toggleButtonState = (inputList, buttonElement, config) => {
     buttonElement.disabled = false;
   }
 };
-const disableButton = (buttonElement, config) => {
+export const disableButton = (buttonElement, config) => {
   buttonElement.classList.add(config.inactiveButtonClass);
   buttonElement.disabled = true;
 };
-const resetValidation = (formElemtent, inputList, config) => {
+export const resetValidation = (formElemtent, inputList, config) => {
   inputList.forEach((input) => {
     hideInputError(formElemtent, input, config);
   });
@@ -81,7 +81,7 @@ const setEventListeners = (formElemtent, config) => {
   });
 };
 
-const enableValidation = (config) => {
+export const enableValidation = (config) => {
   const formList = document.querySelectorAll(config.formSelector);
 
   formList.forEach((formElemtent) => {
