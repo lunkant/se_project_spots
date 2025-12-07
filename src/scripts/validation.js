@@ -87,6 +87,5 @@ export const enableValidation = (config) => {
   formList.forEach((formElemtent) => {
     setEventListeners(formElemtent, config);
   });
-  console.log(formList);
 };
 enableValidation(settings);

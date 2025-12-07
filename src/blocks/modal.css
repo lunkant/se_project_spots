@@ -47,6 +47,7 @@
 }
 .modal__close-button:hover {
   opacity: 1;
+  cursor: pointer;
 }
 .modal__form {
   display: flex;
@@ -105,10 +106,59 @@
   font-size: 20px;
   line-height: 1;
 }
-.modal__submit-button {
+.modal__button {
+  gap: 8px;
+  padding: 18px 32px;
+  border-radius: 8px;
+  max-width: 156px;
+  height: 52px;
+  color: rgba(33, 33, 33, 1);
+  border: 1px solid rgba(33, 33, 33, 1);
+  background-color: rgba(255, 255, 255, 1);
+
+  font-family: Poppins, Arial, Helvetica, sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  cursor: pointer;
+}
+.modal__button:hover {
+  background-color: rgba(33, 33, 33, 1);
+  color: rgba(255, 255, 255, 1);
+  cursor: pointer;
+}
+#modal-delete-form .modal__button:first-of-type {
+  margin-right: 20px;
+  background-color: rgba(255, 101, 101, 1);
+  cursor: pointer;
+}
+#modal-delete-form .modal__button:first-of-type:hover {
+  background-color: rgba(255, 51, 51, 1);
+  color: rgba(33, 33, 33, 1);
+  cursor: pointer;
+}
+#modal-title-delete {
+  font-size: 24px;
+  text-align: center;
+  line-height: 1;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  align-self: flex-start;
+  margin: 0 auto;
+}
+#modal-delete-form {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+
+.modal__submit-button {
   gap: 8px;
   padding: 25px 32px;
   border-radius: 8px;
@@ -130,6 +180,7 @@
 .modal__submit-button:hover {
   opacity: 1;
   background-color: #212121cc;
+  cursor: pointer;
 }
 .modal__submit-button_disabled {
   cursor: not-allowed;
@@ -251,5 +302,26 @@
   }
   .modal__caption_type_preview {
     font-size: 16px;
+  }
+  #modal-delete-form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+  }
+  #modal-title-delete {
+    text-align: center;
+    white-space: normal; /* override desktop nowrap */
+    margin: 0 auto;
+  }
+  #modal-delete-form .modal__button {
+    width: 100%;
+    padding: 18px 32px;
+    font-size: 16px;
+  }
+
+  /* remove desktop side margin on first button */
+  #modal-delete-form .modal__button:first-of-type {
+    margin-right: 0;
   }
 }
