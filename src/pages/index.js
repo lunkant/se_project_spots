@@ -120,27 +120,29 @@ deleteModalCloseBtn.addEventListener("click", () => {
 });
 
 function handleDeleteCard(cardElement, cardId) {
-  // deletes modal when user is sure about the deletion clicks delete a second time
   selectedCard = cardElement;
   selectedCardId = cardId;
-
-  deleteModalButton.addEventListener("click", (evt) => {
-    const deleteButton = evt.currentTarget;
-
-    renderLoading(true, deleteButton, "Delete");
-
-    api
-      .deleteCard(selectedCardId)
-      .then(() => {
-        selectedCard.remove();
-        closeModals(deleteModal);
-      })
-      .catch(console.error)
-      .finally(() => {
-        renderLoading(false, deleteButton, "Delete"); // restore button
-      });
-  });
+  openModal(deleteModal);
 }
+// deletes modal when user is sure about the deletion clicks delete a second time
+
+deleteModalButton.addEventListener("click", (evt) => {
+  const deleteButton = evt.currentTarget;
+
+  renderLoading(true, deleteButton, "Delete");
+
+  api
+    .deleteCard(selectedCardId)
+    .then(() => {
+      selectedCard.remove();
+      closeModals(deleteModal);
+    })
+    .catch(console.error)
+    .finally(() => {
+      renderLoading(false, deleteButton, "Delete"); // restore button
+    });
+});
+
 // delete card add like to card or delete like to card from the server stuff
 
 function handleCardLikeButton(evt, cardId) {
@@ -190,7 +192,6 @@ function getCardElement(data) {
   });
 
   cardDeleteTrashButtonElement.addEventListener("click", () => {
-    openModal(deleteModal);
     handleDeleteCard(cardElement, data._id);
   });
 
