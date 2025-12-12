@@ -130,17 +130,17 @@
   color: rgba(255, 255, 255, 1);
   cursor: pointer;
 }
-#modal-delete-form .modal__button:first-of-type {
+.modal__type_delete_form .modal__button:first-of-type {
   margin-right: 20px;
   background-color: rgba(255, 101, 101, 1);
   cursor: pointer;
 }
-#modal-delete-form .modal__button:first-of-type:hover {
+.modal__type_delete_form .modal__button:first-of-type:hover {
   background-color: rgba(255, 51, 51, 1);
   color: rgba(33, 33, 33, 1);
   cursor: pointer;
 }
-#modal-title-delete {
+.modal__title_delete_form {
   font-size: 24px;
   text-align: center;
   line-height: 1;
@@ -150,7 +150,7 @@
   align-self: flex-start;
   margin: 0 auto;
 }
-#modal-delete-form {
+.modal__type_delete_form {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -302,25 +302,25 @@
   .modal__caption_type_preview {
     font-size: 16px;
   }
-  #modal-delete-form {
+  .modal__type_delete_form {
     display: flex;
     flex-direction: column;
     gap: 12px;
     width: 100%;
   }
-  #modal-title-delete {
+  .modal__title_delete_form {
     text-align: center;
     white-space: normal; /* override desktop nowrap */
     margin: 0 auto;
   }
-  #modal-delete-form .modal__button {
+  .modal__type_delete_form .modal__button {
     width: 100%;
     padding: 18px 32px;
     font-size: 16px;
   }
 
   /* remove desktop side margin on first button */
-  #modal-delete-form .modal__button:first-of-type {
+  .modal__type_delete_form .modal__button:first-of-type {
     margin-right: 0;
   }
 }
